@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+   <title>The Most Annoying ToDo List in the World</title>
+   <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+   <link type="text/css" rel="stylesheet" href="Assets/CSS/styles.css">
+</head>
+<body>
+   <div ng-controller = "GreetingController">
+   <ng-view></ng-view>
+   <h1>{{greeting}}</h1>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+   <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+   <script src="Assets/JS/app.js"></script>
+   <script src="Assets/JS/controllers.js"></script>
+</body>
+</html>
