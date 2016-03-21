@@ -6,9 +6,28 @@
    <link type="text/css" rel="stylesheet" href="Assets/CSS/styles.css">
 </head>
 <body>
-   <div ng-controller = "GreetingController">
-   <ng-view></ng-view>
-   <h1>{{greeting}}</h1>
+   <div class='content' ng-controller = "GreetingController">
+      <h1>{{greeting}}</h1>
+
+      <form>
+      <label>To-Do Name
+         <input type = "text">
+      </label>
+      <label>To-Do Time
+         <input type = "text">
+      </label>
+      <label>To-Do Date
+         <input type = "text">
+      </label>
+      <label>To-Do Details
+         <textarea></textarea>
+      </label>
+      <button type="submit">Add To-Do</button>
+      </form>
+      <ul>
+         <li></li>
+      </ul>
+   <ng-view></ng-view><!-- I'm going to try and get this into partials later, but for now I'm' going to get it done the good old fashioned way. -->
    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
