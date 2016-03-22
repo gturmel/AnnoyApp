@@ -24,13 +24,15 @@ $scope.todos = [{
 
 }]); //end of Greeting Controller
 
-myApp.controller('AddTodo', ['$scope', function($scope){
+//with lots of information pulled from the Code School tutorial.
 
+myApp.controller('AddTodo', ['$scope', function($scope){
+//creates an object
    this.todo = {};
 
-   this.addTask = function(todo) {
-      $scope.todos.push(this.todo);
-      this.todo = {};
+   this.addTask = function(todo) { //defines function, uses todo as our value
+      $scope.todos.push(this.todo); //takes our scope array, adds this.todo to it
+      this.todo = {}; //empties out this.todo to reset the form.
    };
 
 
