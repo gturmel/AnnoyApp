@@ -25,4 +25,15 @@ button {
   border: 3px solid lightblue;
   border-radius: 3px; }
 
+ul, .sweetTwoWayDataBinding {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 4em 0 4em;
+  justify-content: space-between; }
+
+.remove {
+  background-color: red;
+  border: 0.5em solid red;
+  border-radius: 3px; }
+
 /*# sourceMappingURL=styles.css.map */

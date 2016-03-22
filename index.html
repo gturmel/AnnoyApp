@@ -11,21 +11,32 @@
 
       <form>
       <label>To-Do Name
-         <input type = "text">
+         <input ng-model="todo.name" type = "text">
       </label>
       <label>To-Do Time
-         <input type = "text">
+         <input type = "text" ng-model="todo.time">
       </label>
       <label>To-Do Date
-         <input type = "text">
+         <input type = "text" ng-model="todo.date">
       </label>
       <label>To-Do Details
-         <textarea></textarea>
+         <textarea ng-model="todo.details"></textarea>
       </label>
       <button type="submit">Add To-Do</button>
       </form>
-      <ul>
-         <li></li>
+      <div class = 'sweetTwoWayDataBinding'>
+         <h1>{{todo.name}}</h1>
+         <p>{{todo.time}}</p>
+         <p>{{todo.date}}</p>
+         <p>{{todo.details}}</p>
+      </div>
+      <ul ng-repeat="todo in todos">
+
+         <li>{{todo.name}}</li>
+         <li>{{todo.time}}</li>
+         <li>{{todo.date}}</li>
+         <li>{{todo.details}}</li>
+         <li class = 'remove'>X</li>
       </ul>
    <ng-view></ng-view><!-- I'm going to try and get this into partials later, but for now I'm' going to get it done the good old fashioned way. -->
    </div>
