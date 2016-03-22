@@ -6,38 +6,40 @@
    <link type="text/css" rel="stylesheet" href="Assets/CSS/styles.css">
 </head>
 <body>
-   <div class='content' ng-controller = "GreetingController">
+   <div class='content' ng-controller = "GreetingController as greeting">
       <h1>{{greeting}}</h1>
-
-      <form>
+      <!-- <form> -->
+      <form ng-controller = "AddTodo as add" ng-submit="add.addTask(todo)">
       <label>To-Do Name
-         <input ng-model="todo.name" type = "text">
+         <input ng-model="add.todo.name" type = "text">
       </label>
       <label>To-Do Time
-         <input type = "text" ng-model="todo.time">
+         <input type = "text" ng-model="add.todo.time">
       </label>
       <label>To-Do Date
-         <input type = "text" ng-model="todo.date">
+         <input type = "text" ng-model="add.todo.date">
       </label>
       <label>To-Do Details
-         <textarea ng-model="todo.details"></textarea>
+         <textarea ng-model="add.todo.details"></textarea>
       </label>
       <button type="submit">Add To-Do</button>
-      </form>
       <div class = 'sweetTwoWayDataBinding'>
-         <h1>{{todo.name}}</h1>
-         <p>{{todo.time}}</p>
-         <p>{{todo.date}}</p>
-         <p>{{todo.details}}</p>
+         <h1>{{add.todo.name}}</h1>
+         <p>{{add.todo.time}}</p>
+         <p>{{add.todo.date}}</p>
+         <p>{{add.todo.details}}</p>
       </div>
-      <ul ng-repeat="todo in todos">
+      </form>
 
-         <li>{{todo.name}}</li>
-         <li>{{todo.time}}</li>
-         <li>{{todo.date}}</li>
-         <li>{{todo.details}}</li>
-         <li class = 'remove'>X</li>
-      </ul>
+         <ul ng-repeat="todo in todos track by $index">
+
+            <li>{{todo.name}}</li>
+            <li>{{todo.time}}</li>
+            <li>{{todo.date}}</li>
+            <li>{{todo.details}}</li>
+            <li class='remove' ng-click="removeTodo($index)">X</li>
+         </ul>
+
    <ng-view></ng-view><!-- I'm going to try and get this into partials later, but for now I'm' going to get it done the good old fashioned way. -->
    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
